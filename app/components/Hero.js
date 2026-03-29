@@ -211,7 +211,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Stats strip */}
-      <motion.div
+      {/* <motion.div
         className={styles.statsStrip}
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -228,7 +228,7 @@ export default function Hero() {
             <span className={styles.statLabel}>{stat.label}</span>
           </div>
         ))}
-      </motion.div>
+      </motion.div> */}
     </section>
   )
 }
