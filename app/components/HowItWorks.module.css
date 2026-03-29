@@ -1,0 +1,342 @@
+.section {
+  position: relative;
+  padding: var(--section-padding);
+  background: var(--dark-2);
+  overflow: hidden;
+}
+
+/* ── Decorative vertical line ── */
+.vertLine {
+  position: absolute;
+  top: 0;
+  right: 12%;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 214, 0, 0.08) 20%,
+    rgba(255, 214, 0, 0.08) 80%,
+    transparent
+  );
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.header {
+  margin-bottom: 64px;
+}
+
+/* ── Flow Block ── */
+.flowBlock {
+  margin-bottom: 56px;
+}
+
+.flowHeader {
+  margin-bottom: 32px;
+}
+
+.flowTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.flowTagDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--yellow);
+  flex-shrink: 0;
+}
+
+/* ── Steps Row ── */
+.stepsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+/* ── Step Wrap (card + connector) ── */
+.stepWrap {
+  display: flex;
+  align-items: stretch;
+  position: relative;
+}
+
+/* ── Step Card ── */
+.stepCard {
+  position: relative;
+  flex: 1;
+  padding: 32px 28px 36px;
+  border-radius: 6px 0 0 6px;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.stepCard:hover {
+  transform: translateY(-4px);
+}
+
+.stepCardRental {
+  background: var(--dark-3);
+  border: 1px solid rgba(255, 214, 0, 0.1);
+  border-right: none;
+}
+
+.stepCardTaxi {
+  background: var(--dark);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-right: none;
+}
+
+/* Last card restores right border */
+.stepWrap:last-child .stepCard {
+  border-radius: 6px;
+  border-right: 1px solid rgba(255, 214, 0, 0.1);
+}
+
+.stepCardTaxi:last-child,
+.stepWrap:last-child .stepCardTaxi {
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ── Step Number ── */
+.stepNumWrap {
+  margin-bottom: 20px;
+}
+
+.stepNum {
+  font-family: var(--font-heading);
+  font-size: 72px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  display: block;
+  opacity: 0.08;
+  position: absolute;
+  top: 12px;
+  right: 16px;
+}
+
+.stepNumRental {
+  color: var(--yellow);
+}
+
+.stepNumTaxi {
+  color: var(--white);
+}
+
+/* ── Icon Circle ── */
+.iconCircle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  cursor: default;
+}
+
+.iconCircleRental {
+  background: rgba(255, 214, 0, 0.12);
+  color: var(--yellow);
+  border: 1px solid rgba(255, 214, 0, 0.2);
+}
+
+.iconCircleTaxi {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ── Step Content ── */
+.stepContent {
+  position: relative;
+  z-index: 1;
+}
+
+.stepTitle {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  letter-spacing: 0.03em;
+  color: var(--white);
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+.stepDesc {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* ── Step dot ── */
+.stepDot {
+  position: absolute;
+  bottom: 0;
+  left: 28px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+}
+
+.stepDotRental {
+  background: var(--yellow);
+  box-shadow: 0 0 6px rgba(255, 214, 0, 0.5);
+}
+
+.stepDotTaxi {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ── Connector ── */
+.connector {
+  display: flex;
+  align-items: center;
+  width: 32px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.connectorLine {
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  transform-origin: left center;
+}
+
+.connectorRental {
+  background: rgba(255, 214, 0, 0.25);
+}
+
+.connectorTaxi {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.connectorArrow {
+  position: absolute;
+  right: 2px;
+}
+
+.arrowRental {
+  color: rgba(255, 214, 0, 0.4);
+}
+
+.arrowTaxi {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 214, 0, 0.15) 20%,
+    rgba(255, 214, 0, 0.15) 80%,
+    transparent
+  );
+  margin-bottom: 56px;
+  transform-origin: left center;
+}
+
+/* ── Bottom CTA card ── */
+.bottomCta {
+  margin-top: 16px;
+}
+
+.ctaCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  background: var(--dark-3);
+  border: 1px solid rgba(255, 214, 0, 0.15);
+  border-radius: 6px;
+  padding: 40px 48px;
+  flex-wrap: wrap;
+}
+
+.ctaText {
+  flex: 1;
+  min-width: 240px;
+}
+
+.ctaTitle {
+  font-family: var(--font-heading);
+  font-size: 42px;
+  color: var(--white);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.ctaDesc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.6;
+}
+
+.ctaBtns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .stepsRow {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .stepCard {
+    border-radius: 6px;
+    border-right: 1px solid rgba(255, 214, 0, 0.1) !important;
+  }
+
+  .stepCardTaxi {
+    border-right: 1px solid rgba(255, 255, 255, 0.06) !important;
+  }
+
+  .connector {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .stepsRow {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaCard {
+    padding: 28px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ctaBtns {
+    width: 100%;
+  }
+
+  .ctaBtns button,
+  .ctaBtns a {
+    flex: 1;
+    justify-content: center;
+  }
+}

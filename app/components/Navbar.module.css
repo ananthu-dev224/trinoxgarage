@@ -1,0 +1,218 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 5%;
+  transition: all 0.4s ease;
+}
+
+.navbar.scrolled {
+  padding: 14px 5%;
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 214, 0, 0.1);
+}
+
+/* ── Logo ── */
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logoMark {
+  width: 120px;   /* increased size */
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ── Nav Links ── */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+
+.navLink {
+  position: relative;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-light);
+  transition: color 0.3s ease;
+  padding-bottom: 4px;
+}
+
+.navLink:hover,
+.navLink.active {
+  color: var(--white);
+}
+
+.navLinkLine {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: var(--yellow);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover .navLinkLine,
+.navLink.active .navLinkLine {
+  width: 100%;
+}
+
+/* ── Right Side ── */
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.phoneBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--yellow);
+  color: var(--black);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 2px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+}
+
+.phoneBtn:hover {
+  background: var(--yellow-dark);
+  transform: translateY(-1px);
+}
+
+.menuBtn {
+  display: none;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--white);
+  padding: 8px;
+  border-radius: 2px;
+  transition: border-color 0.3s;
+}
+
+.menuBtn:hover {
+  border-color: var(--yellow);
+  color: var(--yellow);
+}
+
+/* ── Mobile Menu ── */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background: var(--dark);
+  padding: 100px 8% 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+}
+
+.mobileLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mobileLink {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 8vw, 56px);
+  color: rgba(255,255,255,0.5);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: color 0.3s ease;
+  letter-spacing: 0.04em;
+}
+
+.mobileLink:hover,
+.mobileLink.mobileActive {
+  color: var(--white);
+}
+
+.mobileActive {
+  color: var(--yellow) !important;
+}
+
+.mobileLinkNum {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--yellow);
+  letter-spacing: 0.1em;
+  min-width: 24px;
+}
+
+.mobileFooter {
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  background: rgba(0,0,0,0.6);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .navLinks {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    display: none;
+  }
+  .menuBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .phoneBtn span {
+    display: none;
+  }
+  .phoneBtn {
+    padding: 10px 12px;
+  }
+}

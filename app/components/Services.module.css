@@ -1,0 +1,347 @@
+.section {
+  position: relative;
+  padding: var(--section-padding);
+  background: var(--dark);
+  overflow: hidden;
+}
+
+/* ── Subtle grid background ── */
+.bgGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,214,0,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,214,0,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.header {
+  margin-bottom: 60px;
+}
+
+/* ── Cards Grid ── */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+/* ── Card Base ── */
+.card {
+  position: relative;
+  border-radius: 6px;
+  padding: 48px 44px;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+/* Accent card (yellow) */
+.cardAccent {
+  background: var(--yellow);
+  border: 1px solid var(--yellow);
+}
+
+/* Dark card */
+.cardDark {
+  background: var(--dark-2);
+  border: 1px solid rgba(255,255,255,0.07);
+}
+
+/* ── Decorative icon ── */
+.decorIcon {
+  position: absolute;
+  right: -30px;
+  bottom: -30px;
+  opacity: 0.05;
+  color: currentColor;
+  pointer-events: none;
+}
+
+.cardAccent .decorIcon {
+  color: var(--black);
+}
+
+.cardDark .decorIcon {
+  color: var(--white);
+}
+
+/* ── Card Top ── */
+.cardTop {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.iconWrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.iconWrapAccent {
+  background: rgba(0,0,0,0.12);
+  color: var(--black);
+}
+
+.iconWrapDark {
+  background: rgba(255,214,0,0.1);
+  color: var(--yellow);
+}
+
+.cardTag {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.cardAccent .cardTag {
+  color: rgba(0,0,0,0.5);
+}
+
+.cardDark .cardTag {
+  color: rgba(255,255,255,0.35);
+}
+
+/* ── Card Title ── */
+.cardTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 3.5vw, 52px);
+  line-height: 1.0;
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+}
+
+.cardAccent .cardTitle {
+  color: var(--black);
+}
+
+.cardDark .cardTitle {
+  color: var(--white);
+}
+
+/* ── Card Description ── */
+.cardDesc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+.cardAccent .cardDesc {
+  color: rgba(0,0,0,0.65);
+}
+
+.cardDark .cardDesc {
+  color: rgba(255,255,255,0.5);
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  margin-bottom: 24px;
+}
+
+.dividerAccent {
+  background: rgba(0,0,0,0.1);
+}
+
+.dividerDark {
+  background: rgba(255,255,255,0.07);
+}
+
+/* ── Features ── */
+.features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.cardAccent .featureItem {
+  color: rgba(0,0,0,0.75);
+}
+
+.cardDark .featureItem {
+  color: rgba(255,255,255,0.6);
+}
+
+.checkIcon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ── Stats Row ── */
+.statsRow {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.statBox {
+  flex: 1;
+  padding: 16px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.statBoxAccent {
+  background: rgba(0,0,0,0.1);
+}
+
+.statBoxDark {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+}
+
+.statVal {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.cardAccent .statVal {
+  color: var(--black);
+}
+
+.cardDark .statVal {
+  color: var(--yellow);
+}
+
+.statLbl {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.cardAccent .statLbl {
+  color: rgba(0,0,0,0.45);
+}
+
+.cardDark .statLbl {
+  color: rgba(255,255,255,0.35);
+}
+
+/* ── Card CTA ── */
+.cardCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: 2px;
+  border: none;
+  transition: transform 0.3s ease, background 0.3s ease;
+  width: 100%;
+  justify-content: center;
+}
+
+.cardCta:hover {
+  transform: translateY(-2px);
+}
+
+.ctaDark {
+  background: var(--black);
+  color: var(--yellow);
+}
+
+.ctaDark:hover {
+  background: rgba(0,0,0,0.85);
+}
+
+.ctaYellow {
+  background: var(--yellow);
+  color: var(--black);
+}
+
+.ctaYellow:hover {
+  background: var(--yellow-dark);
+}
+
+/* ── Bottom Strip ── */
+.bottomStrip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.stripItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 24px;
+  background: var(--dark);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.stripItem:hover {
+  background: rgba(255,214,0,0.05);
+  color: var(--white);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .bottomStrip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .card {
+    padding: 32px 24px;
+  }
+
+  .bottomStrip {
+    grid-template-columns: 1fr;
+  }
+}

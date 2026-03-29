@@ -1,0 +1,466 @@
+.footer {
+  background: var(--black);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ══════════════════════════
+   CTA BANNER
+══════════════════════════ */
+.ctaBanner {
+  background: var(--yellow);
+  padding: 0 5%;
+}
+
+.ctaBannerInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 36px 0;
+  flex-wrap: wrap;
+}
+
+.ctaBannerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ctaBannerTag {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.ctaBannerTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 3vw, 40px);
+  color: var(--black);
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.ctaBannerRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.ctaCallBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--black);
+  color: var(--yellow);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.25s ease;
+}
+
+.ctaCallBtn:hover {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.ctaWaBtn {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  color: var(--black);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: 2px;
+  border: 2px solid rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.ctaWaBtn:hover {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.4);
+}
+
+/* ══════════════════════════
+   BODY
+══════════════════════════ */
+.body {
+  padding: 72px 5% 52px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 48px;
+}
+
+/* ── Brand column ── */
+.brandCol {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+/* ── Logo ── */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logoMark {
+  position: relative;
+  width: 120px; /* adjust (160–220 based on your navbar) */
+  height: 60px;
+  flex-shrink: 0;
+}
+
+.logoImage {
+  object-fit: contain;
+}
+
+.brandDesc {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ── Socials ── */
+.socials {
+  display: flex;
+  gap: 10px;
+}
+
+.socialBtn {
+  width: 38px;
+  height: 38px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.socialBtn:hover {
+  background: var(--yellow);
+  border-color: var(--yellow);
+  color: var(--black);
+}
+
+/* ── Quick contact ── */
+.quickContact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contactLine {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: none;
+  transition: color 0.25s ease;
+  line-height: 1.4;
+}
+
+.contactLine:hover {
+  color: var(--white);
+}
+
+/* ── Link columns ── */
+.linksCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.colTitle {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  color: var(--white);
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.linkList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.footerLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  padding: 6px 0;
+  transition:
+    color 0.25s ease,
+    gap 0.25s ease;
+}
+
+.footerLink:hover {
+  color: var(--yellow);
+  gap: 12px;
+}
+
+.linkArrow {
+  color: var(--yellow);
+  font-size: 16px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ── Last column ── */
+.lastCol {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ── Fleet highlights ── */
+.fleetList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fleetItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--dark-2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  transition: border-color 0.25s ease;
+}
+
+.fleetItem:hover {
+  border-color: rgba(255, 214, 0, 0.2);
+}
+
+.fleetIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  background: rgba(255, 214, 0, 0.08);
+  color: var(--yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fleetInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.fleetLabel {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.fleetSub {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--yellow);
+  font-weight: 600;
+}
+
+/* ── Hours mini ── */
+.hoursBox {
+  background: var(--dark-2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.hoursRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.hoursRow:last-child {
+  border-bottom: none;
+}
+
+.hoursDay {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.hoursTime {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.hoursAccent {
+  color: var(--yellow);
+}
+
+/* ══════════════════════════
+   BOTTOM BAR
+══════════════════════════ */
+.bottomBar {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 20px 5%;
+}
+
+.bottomInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.copyright {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.25);
+  line-height: 1.5;
+}
+
+.bottomLinks {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bottomLink {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.25);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.bottomLink:hover {
+  color: var(--yellow);
+}
+
+.bottomDot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+}
+
+/* ── Back to top ── */
+.backToTop {
+  width: 40px;
+  height: 40px;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.backToTop:hover {
+  background: var(--yellow);
+  border-color: var(--yellow);
+  color: var(--black);
+}
+
+/* ══════════════════════════
+   RESPONSIVE
+══════════════════════════ */
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+
+  .brandCol {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  .brandDesc,
+  .socials,
+  .quickContact {
+    flex: 1;
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .brandCol {
+    flex-direction: column;
+  }
+
+  .ctaBannerInner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .bottomInner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .bottomLinks {
+    flex-wrap: wrap;
+  }
+}

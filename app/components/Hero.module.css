@@ -1,0 +1,304 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0 5%;
+}
+
+/* ── Canvas background ── */
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* ── Overlays ── */
+.gradientLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 65%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(10,10,10,1) 40%, transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.gradientBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 240px;
+  background: linear-gradient(to top, var(--black), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── Decorative side text ── */
+.sideText {
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  z-index: 2;
+  white-space: nowrap;
+}
+
+.sideText span {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.15);
+}
+
+/* ── Scroll indicator ── */
+.scrollIndicator {
+  position: absolute;
+  bottom: 120px;
+  right: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 2;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--yellow), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.1); }
+}
+
+.scrollIndicator span {
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: rgba(255,255,255,0.3);
+  writing-mode: vertical-rl;
+}
+
+/* ── Main Content ── */
+.content {
+  position: relative;
+  z-index: 3;
+  max-width: 760px;
+  padding-top: 100px;
+  padding-bottom: 160px;
+}
+
+/* ── Tag row ── */
+.tagRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.tagDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--yellow);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,214,0,0.5); }
+  50% { box-shadow: 0 0 0 8px rgba(255,214,0,0); }
+}
+
+.tagText {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--yellow);
+}
+
+/* ── Headline ── */
+.headlineWrap {
+  margin-bottom: 28px;
+}
+
+.headline {
+  font-family: var(--font-heading);
+  font-size: clamp(64px, 10vw, 130px);
+  color: var(--white);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  display: block;
+}
+
+.headlineRow2 {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: clamp(64px, 10vw, 130px);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+}
+
+.headlineOutline {
+  -webkit-text-stroke: 2px rgba(255,255,255,0.3);
+  color: transparent;
+}
+
+.headlineAccent {
+  color: var(--yellow);
+}
+
+/* ── Description ── */
+.description {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.55);
+  max-width: 480px;
+  margin-bottom: 40px;
+}
+
+/* ── CTA Row ── */
+.ctaRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+/* ── Badges ── */
+.badges {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badge span {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.05em;
+}
+
+/* ── Stats Strip ── */
+.statsStrip {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  transition: background 0.3s ease;
+}
+
+.stat:last-child {
+  border-right: none;
+}
+
+.stat:hover {
+  background: rgba(255,214,0,0.04);
+}
+
+.statValue {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  color: var(--yellow);
+  line-height: 1;
+  margin-bottom: 4px;
+  letter-spacing: 0.02em;
+}
+
+.statLabel {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .content {
+    padding-top: 120px;
+    padding-bottom: 180px;
+  }
+
+  .headlineOutline {
+    -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+  }
+
+  .statsStrip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat:nth-child(2) {
+    border-right: none;
+  }
+
+  .stat:nth-child(3),
+  .stat:nth-child(4) {
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .scrollIndicator {
+    display: none;
+  }
+
+  .sideText {
+    display: none;
+  }
+
+  .gradientLeft {
+    width: 100%;
+    background: linear-gradient(to top, rgba(10,10,10,0.7), rgba(10,10,10,0.4));
+  }
+}
+
+@media (max-width: 480px) {
+  .ctaRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ctaRow button {
+    width: 100%;
+    justify-content: center;
+  }
+}
