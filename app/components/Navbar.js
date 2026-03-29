@@ -64,7 +64,7 @@ export default function Navbar() {
         >
           <div className={styles.logoMark}>
             <Image
-              src="/images/trinox_logO.png"
+              src="/images/trinox_logo.png"
               alt="Trinox Logo"
               width={120}
               height={60}
