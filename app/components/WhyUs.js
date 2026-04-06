@@ -11,69 +11,69 @@ import styles from './WhyUs.module.css'
 const reasons = [
   {
     icon: ShieldCheck,
-    title: 'Fully Insured',
+    title: "Fully Insured",
     description:
-      'Every vehicle in our fleet is comprehensively insured. Drive with complete peace of mind.',
-    stat: '100%',
-    statLabel: 'Coverage',
+      "Every vehicle in our fleet is comprehensively insured. Drive with complete peace of mind.",
+    stat: "100%",
+    statLabel: "Coverage",
   },
   {
     icon: Clock,
-    title: '24/7 Availability',
+    title: "24/7 Availability",
     description:
-      'Round-the-clock support and booking. We\'re always here whenever you need us, day or night.',
-    stat: '24/7',
-    statLabel: 'Support',
+      "Round-the-clock support and booking. We're always here whenever you need us, day or night.",
+    stat: "24/7",
+    statLabel: "Support",
   },
   {
     icon: ThumbsUp,
-    title: 'Verified Drivers',
+    title: "Driver-Friendly Fleet",
     description:
-      'All our taxi drivers are background-checked, trained, and rated by real customers.',
-    stat: '4.9★',
-    statLabel: 'Avg Rating',
+      "Our vehicles are optimized for ride-hailing, ensuring comfort, efficiency, and maximum earning potential.",
+    stat: "Top",
+    statLabel: "Performance",
   },
   {
     icon: Banknote,
-    title: 'Transparent Pricing',
+    title: "Transparent Pricing",
     description:
-      'No hidden fees, no surprises. What you see is what you pay — always fair and upfront.',
-    stat: '0',
-    statLabel: 'Hidden Fees',
+      "No hidden fees, no surprises. What you see is what you pay — always fair and upfront.",
+    stat: "0",
+    statLabel: "Hidden Fees",
   },
   {
     icon: MapPin,
-    title: 'Doorstep Delivery',
+    title: "Doorstep Delivery",
     description:
-      'We bring your rental car right to your location. No need to travel to pick it up.',
-    stat: '30km',
-    statLabel: 'Delivery Radius',
+      "We bring your rental car right to your location. No need to travel to pick it up.",
+    stat: "30km",
+    statLabel: "Delivery Radius",
   },
   {
     icon: Wrench,
-    title: 'Well Maintained',
+    title: "Well Maintained",
     description:
-      'Every car is serviced, cleaned, and safety-checked before each rental. Always road-ready.',
-    stat: '100%',
-    statLabel: 'Serviced',
+      "Every car is serviced, cleaned, and safety-checked before each rental. Always road-ready.",
+    stat: "100%",
+    statLabel: "Serviced",
   },
   {
     icon: HeartHandshake,
-    title: 'Local Expertise',
+    title: "Local Market Expertise",
     description:
-      'We know Kerala\'s roads, routes, and destinations better than anyone. Local knowledge, better journeys.',
-    stat: '5+',
-    statLabel: 'Years Local',
+      "With deep knowledge of Kerala’s ride-hailing market, we help drivers choose the right vehicles to maximize earnings.",
+    stat: "5+",
+    statLabel: "Years Experience",
   },
   {
     icon: Award,
-    title: 'Top Rated Service',
+    title: "Top Rated Service",
     description:
-      'Consistently rated as one of the best vehicle rental services across Tirur and surrounding areas.',
-    stat: '500+',
-    statLabel: 'Happy Clients',
+      "Consistently rated as one of the best vehicle rental services across Thrissur and surrounding areas.",
+    stat: "500+",
+    statLabel: "Happy Clients",
   },
-]
+];
 
 export default function WhyUs() {
   const sectionRef = useRef(null)

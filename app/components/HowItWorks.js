@@ -40,32 +40,32 @@ const taxiSteps = [
   {
     number: '01',
     icon: Search,
-    title: 'Request a Ride',
+    title: 'Choose Your Vehicle',
     description:
-      'Call us, WhatsApp, or book via Uber. Tell us your pickup location and destination.',
+      'Browse our available taxi-ready cars and select the one that fits your earning goals.',
   },
   {
     number: '02',
     icon: CalendarCheck,
-    title: 'Get Matched',
+    title: 'Book & Get Approved',
     description:
-      'We assign you a verified Trinox driver nearby. Receive driver details and ETA instantly.',
+      'Contact us via call or WhatsApp, submit basic details, and confirm your rental plan.',
   },
   {
     number: '03',
     icon: Car,
-    title: 'Driver Arrives',
+    title: 'Pickup Your Car',
     description:
-      'Your professional driver arrives on time in a clean, air-conditioned vehicle.',
+      'Collect your vehicle from our location or opt for doorstep delivery. All cars are clean and ready to drive.',
   },
   {
     number: '04',
     icon: MapPin,
-    title: 'Reach & Pay',
+    title: 'Start Driving & Earning',
     description:
-      'Arrive safely at your destination. Pay via cash, UPI, or card — simple and transparent.',
+      'Register on ride-hailing platforms and start earning daily income with your rented taxi car.',
   },
-]
+];
 
 export default function HowItWorks() {
   const sectionRef = useRef(null)
@@ -77,12 +77,10 @@ export default function HowItWorks() {
 
   return (
     <section id="how-it-works" ref={sectionRef} className={styles.section}>
-
       {/* Decorative vertical line */}
       <div className={styles.vertLine} />
 
       <div className={styles.container}>
-
         {/* Header */}
         <motion.div
           className={styles.header}
@@ -93,7 +91,8 @@ export default function HowItWorks() {
           <span className="section-tag">The Process</span>
           <h2 className="section-title">HOW IT WORKS</h2>
           <p className="section-subtitle">
-            Simple, fast, and transparent. Getting your vehicle has never been easier.
+            Simple, fast, and transparent. Getting your vehicle has never been
+            easier.
           </p>
         </motion.div>
 
@@ -142,8 +141,11 @@ export default function HowItWorks() {
             transition={{ duration: 0.7 }}
           >
             <div className={styles.flowTag}>
-              <span className={styles.flowTagDot} style={{ background: 'var(--white)' }} />
-              Uber Taxi Process
+              <span
+                className={styles.flowTagDot}
+                style={{ background: "var(--white)" }}
+              />
+              Drive & Earn Taxi Cars Process
             </div>
           </motion.div>
 
@@ -172,26 +174,30 @@ export default function HowItWorks() {
             <div className={styles.ctaText}>
               <h3 className={styles.ctaTitle}>READY TO RIDE?</h3>
               <p className={styles.ctaDesc}>
-                Booking takes less than 2 minutes. Our team is available 24/7 to assist you.
+                Booking takes less than 2 minutes. Our team is available 24/7 to
+                assist you.
               </p>
             </div>
             <div className={styles.ctaBtns}>
               <button
                 className="btn-primary"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() =>
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
               >
                 Book Now <ArrowRight size={15} />
               </button>
-              <a href="tel:+1234567890" className="btn-outline">
+              <a href="tel:+918330053689" className="btn-outline">
                 Call Us
               </a>
             </div>
           </div>
         </motion.div>
-
       </div>
     </section>
-  )
+  );
 }
 
 function StepCard({ step, index, isInView, isLast, variant }) {

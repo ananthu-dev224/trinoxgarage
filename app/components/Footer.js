@@ -91,11 +91,11 @@ const quickLinks = [
 
 const services = [
   { label: "Self-Drive Car Rental", href: "#services" },
-  { label: "Uber Taxi Service", href: "#services" },
+  { label: "Drive & Earn Taxi Rental", href: "#services" },
   { label: "Airport Transfers", href: "#contact" },
   { label: "Outstation Trips", href: "#contact" },
-  { label: "Wedding Car Hire", href: "#contact" },
-  { label: "Corporate Rentals", href: "#contact" },
+  { label: "Wedding Car Rental", href: "#contact" },
+  { label: "Corporate Travel", href: "#contact" },
   { label: "Long-Term Rentals", href: "#contact" },
 ];
 
@@ -143,13 +143,13 @@ export default function Footer() {
             </h3>
           </div>
           <div className={styles.ctaBannerRight}>
-            <a href="tel:+919876543210" className={styles.ctaCallBtn}>
+            <a href="tel:+918330053689" className={styles.ctaCallBtn}>
               <Phone size={16} />
               Call Now — 24/7
             </a>
             {/* FIX 1: Was missing the opening `<` on this anchor tag */}
             <a
-              href="https://wa.me/919876543210"
+              href="https://wa.me/918330053689"
               target="_blank"
               rel="noreferrer"
               className={styles.ctaWaBtn}
@@ -186,7 +186,7 @@ export default function Footer() {
 
               <p className={styles.brandDesc}>
                 Trinox Garage is Kerala's trusted vehicle rental and taxi
-                service, based in Tirur, Malappuram. Premium cars, verified
+                service, based in Thalakottukara, Thrissur. Premium cars, verified
                 drivers, and round-the-clock availability — all in one place.
               </p>
 
@@ -209,20 +209,20 @@ export default function Footer() {
 
               {/* Contact quick */}
               <div className={styles.quickContact}>
-                <a href="tel:+919876543210" className={styles.contactLine}>
+                <a href="tel:+918330053689" className={styles.contactLine}>
                   <Phone size={13} color="var(--yellow)" />
-                  <span>+91 98765 43210</span>
+                  <span>+91 83300 53689</span>
                 </a>
                 <a
-                  href="mailto:hello@trinoxgarage.com"
+                  href="mailto:hello.trinoxgarage@gmail.com"
                   className={styles.contactLine}
                 >
                   <Mail size={13} color="var(--yellow)" />
-                  <span>hello@trinoxgarage.com</span>
+                  <span>hello.trinoxgarage@gmail.com</span>
                 </a>
                 <div className={styles.contactLine}>
                   <MapPin size={13} color="var(--yellow)" />
-                  <span>Tirur, Malappuram, Kerala — 676101</span>
+                  <span>Thalakottukara, Thrissur, Kerala — 680501</span>
                 </div>
               </div>
             </motion.div>

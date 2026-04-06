@@ -12,38 +12,45 @@ const contactInfo = [
   {
     icon: Phone,
     label: 'Call / WhatsApp',
-    value: '+91 98765 43210',
+    value: '+91 83300 53689',
     sub: 'Available 24/7',
-    href: 'tel:+919876543210',
+    href: 'tel:+918330053689',
     action: 'Call Now',
   },
   {
     icon: MessageCircle,
     label: 'WhatsApp',
-    value: '+91 98765 43210',
+    value: '+91 83300 53689',
     sub: 'Chat with us instantly',
-    href: 'https://wa.me/919876543210',
+    href: 'https://wa.me/918330053689',
     action: 'WhatsApp Us',
   },
   {
     icon: Mail,
     label: 'Email Us',
-    value: 'hello@trinoxgarage.com',
+    value: 'hello.trinoxgarage@gmail.com',
     sub: 'We reply within 2 hours',
-    href: 'mailto:hello@trinoxgarage.com',
+    href: 'mailto:hello.trinoxgarage@gmail.com',
     action: 'Send Email',
   },
   {
     icon: MapPin,
     label: 'Our Location',
-    value: 'Tirur, Malappuram',
-    sub: 'Kerala, India — 676101',
+    value: 'Thalakottukara, Thrissur',
+    sub: 'Kerala, India — 680501',
     href: 'https://maps.google.com',
     action: 'Get Directions',
   },
 ]
 
-const services = ['Car Rental', 'Uber Taxi', 'Airport Transfer', 'Outstation Trip', 'Wedding Car', 'Other']
+const services = [
+  'Car Rental',
+  'Taxi Rental (Drive & Earn)',
+  'Airport Transfer',
+  'Outstation Trip',
+  'Wedding Car Rental',
+  'Corporate Travel'
+];
 
 export default function Contact() {
   const sectionRef = useRef(null)
@@ -175,7 +182,7 @@ export default function Contact() {
             >
               <iframe
                 title="Trinox Garage Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31470.123456789!2d75.9206!3d10.9147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7d1234567890%3A0xabcdef1234567890!2sTirur%2C%20Kerala!5e0!3m2!1sen!2sin!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15685.552513494129!2d76.12841949919847!3d10.626925432204779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7ea53630a2833%3A0x60d65bb2f2cf0370!2sThalakottukara%2C%20Kerala%2C%20India!5e0!3m2!1sen!2sus!4v1775484570933!5m2!1sen!2sus"
                 width="100%"
                 height="100%"
                 style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg)' }}
@@ -185,7 +192,7 @@ export default function Contact() {
               />
               <div className={styles.mapOverlay}>
                 <MapPin size={20} color="var(--yellow)" />
-                <span>Tirur, Malappuram, Kerala</span>
+                <span>Thalakottukara, Thrissur, Kerala</span>
               </div>
             </motion.div>
           </motion.div>

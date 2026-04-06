@@ -95,7 +95,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className={styles.navRight}>
-          <a href="tel:+1234567890" className={styles.phoneBtn}>
+          <a href="tel:+918330053689" className={styles.phoneBtn}>
             <Phone size={14} />
             <span>Book Now</span>
           </a>
@@ -142,7 +142,7 @@ export default function Navbar() {
               ))}
             </ul>
             <div className={styles.mobileFooter}>
-              <a href="tel:+1234567890" className="btn-primary">
+              <a href="tel:+918330053689" className="btn-primary">
                 <Phone size={14} />
                 Call to Book
               </a>

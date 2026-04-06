@@ -9,46 +9,46 @@ const services = [
   {
     id: 'rental',
     icon: Car,
-    tag: '01 — Rental Cars',
+    tag: '01 — Car Rental',
     title: 'Self-Drive\nCar Rental',
     description:
-      'Rent from our premium fleet and drive on your own terms. Whether it\'s a day trip, a weekend getaway, or a long-term rental — Trinox Garage has the perfect vehicle waiting for you.',
+      'Choose from our premium fleet and enjoy complete freedom on the road. Perfect for personal use, trips, or long-term needs with flexible rental options.',
     features: [
-      'Wide range of vehicles — sedans, SUVs & more',
+      'Sedans, SUVs & premium vehicles',
       'Flexible daily, weekly & monthly plans',
-      'Clean, serviced & fully insured cars',
+      'Fully serviced & insured cars',
       'Doorstep delivery available',
     ],
     cta: 'Rent a Car',
     accent: true,
     stats: [
-      { value: '30+', label: 'Car Models' },
-      { value: '₹999', label: 'Starting/Day' },
+      { value: '30+', label: 'Vehicles' },
+      { value: '₹999', label: 'Starting / Day' },
     ],
     decorIcon: Car,
   },
   {
-    id: 'taxi',
+    id: 'taxi-rental',
     icon: Navigation,
-    tag: '02 — Taxi Service',
-    title: 'Uber Taxi\nRide Service',
+    tag: '02 — Taxi Rental',
+    title: 'Drive & Earn\nTaxi Cars',
     description:
-      'Book a professional Trinox driver for comfortable, reliable rides across the city and beyond. Our trained drivers ensure punctual, safe, and smooth journeys every time.',
+      'Rent taxi-ready vehicles and start earning with ride-hailing platforms. Ideal for drivers looking to generate daily income without owning a car.',
     features: [
-      'City rides & outstation trips',
-      'Airport pickup & drop-off',
-      'Trained & verified drivers',
-      'Real-time fare estimates',
+      'Taxi-approved vehicles ready for registration',
+      'Affordable weekly & monthly rental plans',
+      'Perfect for Uber, Ola & other platforms',
+      'Well-maintained & fuel-efficient cars',
     ],
-    cta: 'Book a Ride',
+    cta: 'Start Earning',
     accent: false,
     stats: [
-      { value: '15 min', label: 'Avg Pickup' },
-      { value: '4.9★', label: 'Driver Rating' },
+      { value: 'Low Cost', label: 'Entry' },
+      { value: 'High', label: 'Earning Potential' },
     ],
     decorIcon: Navigation,
   },
-]
+];
 
 const featureIcons = [CheckCircle2, CheckCircle2, CheckCircle2, CheckCircle2]
 
@@ -92,7 +92,7 @@ export default function Services() {
           transition={{ duration: 0.8, delay: 0.7 }}
         >
           {[
-            { icon: Shield, text: 'Fully insured vehicles & drivers' },
+            { icon: Shield, text: 'Fully insured vehicles' },
             { icon: Clock, text: '24/7 booking & support' },
             { icon: MapPin, text: 'Covering all of Kerala' },
             { icon: Zap, text: 'Instant confirmation' },

@@ -118,7 +118,6 @@ export default function Hero() {
 
       {/* Main content */}
       <motion.div className={styles.content} style={{ y: yText, opacity }}>
-
         {/* Tag line */}
         <motion.div
           className={styles.tagRow}
@@ -127,7 +126,9 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <span className={styles.tagDot} />
-          <span className={styles.tagText}>Kerala's Premium Vehicle Service</span>
+          <span className={styles.tagText}>
+            Kerala's Premium Vehicle Service
+          </span>
         </motion.div>
 
         {/* Headline */}
@@ -168,8 +169,9 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.85 }}
         >
-          Trinox Garage offers premium car rentals and professional Uber taxi services.
-          Whether you're exploring the city or need a reliable ride — we've got you covered.
+          Trinox Garage provides premium car rentals and drive-to-earn taxi
+          vehicles. From personal trips to income opportunities — we power every
+          journey.
         </motion.p>
 
         {/* CTAs */}
@@ -230,5 +232,5 @@ export default function Hero() {
         ))}
       </motion.div> */}
     </section>
-  )
+  );
 }
