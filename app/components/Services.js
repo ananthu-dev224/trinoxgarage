@@ -2,7 +2,7 @@
 
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Car, Navigation, CheckCircle2, ArrowRight, Clock, MapPin, Shield, Zap } from 'lucide-react'
+import { Car, Navigation, Plane, CheckCircle2, ArrowRight, Clock, MapPin, Shield, Zap } from 'lucide-react'
 import styles from './Services.module.css'
 
 const services = [
@@ -14,7 +14,7 @@ const services = [
     description:
       'Choose from our premium fleet and enjoy complete freedom on the road. Perfect for personal use, trips, or long-term needs with flexible rental options.',
     features: [
-      'Sedans, SUVs & premium vehicles',
+      'Sedans, SUVs & hatchbacks',
       'Flexible daily, weekly & monthly plans',
       'Fully serviced & insured cars',
       'Doorstep delivery available',
@@ -22,15 +22,36 @@ const services = [
     cta: 'Rent a Car',
     accent: true,
     stats: [
-      { value: '30+', label: 'Vehicles' },
-      { value: '₹999', label: 'Starting / Day' },
+      { value: '15+', label: 'Vehicles' },
+      { value: '₹1,100', label: 'Starting / Day' },
     ],
     decorIcon: Car,
   },
   {
+    id: 'tourism',
+    icon: Plane,
+    tag: '02 — Tourism',
+    title: 'Travel &\nTourism',
+    description:
+      'From airport pickups to curated holiday packages — travel Kerala and beyond with comfortable vehicles and reliable service, tailored to your itinerary.',
+    features: [
+      'Airport transfers & hotel pickups',
+      'Custom tourism & sightseeing trips',
+      'Outstation & holiday travel packages',
+      'Family, group & corporate travel',
+    ],
+    cta: 'Plan Your Trip',
+    accent: false,
+    stats: [
+      { value: '24/7', label: 'Airport Ready' },
+      { value: 'Custom', label: 'Packages' },
+    ],
+    decorIcon: Plane,
+  },
+  {
     id: 'taxi-rental',
     icon: Navigation,
-    tag: '02 — Taxi Rental',
+    tag: '03 — Taxi Rental',
     title: 'Drive & Earn\nTaxi Cars',
     description:
       'Rent taxi-ready vehicles and start earning with ride-hailing platforms. Ideal for drivers looking to generate daily income without owning a car.',
@@ -72,8 +93,8 @@ export default function Services() {
           <span className="section-tag">What We Offer</span>
           <h2 className="section-title">OUR SERVICES</h2>
           <p className="section-subtitle">
-            Two powerful services built around one goal — getting you where you
-            need to be, in comfort and style.
+            Self-drive rentals, tourism & travel packages, and drive-to-earn taxi
+            cars — everything you need to move, explore, and earn.
           </p>
         </motion.div>
 

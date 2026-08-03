@@ -5,6 +5,8 @@ import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react'
 import styles from './Testimonials.module.css'
 
+const year = new Date().getFullYear()
+
 const testimonials = [
   {
     id: 1,
@@ -14,7 +16,7 @@ const testimonials = [
     rating: 5,
     service: 'Car Rental',
     text: 'Rented an Innova from Trinox Garage for a family trip to Wayanad. The car was spotless, AC was perfect, and the delivery to our doorstep saved so much time. Will definitely book again!',
-    date: 'March 2025',
+    date: `March ${year}`,
   },
   {
     id: 2,
@@ -24,7 +26,7 @@ const testimonials = [
     rating: 5,
     service: 'Uber Taxi',
     text: 'Booked a taxi for my airport transfer at 4am. The driver was punctual, polite, and the car was clean. Trinox Garage is my go-to for all rides now. Highly recommend their service!',
-    date: 'February 2025',
+    date: `February ${year}`,
   },
   {
     id: 3,
@@ -34,7 +36,7 @@ const testimonials = [
     rating: 5,
     service: 'Car Rental',
     text: 'Got a Fortuner for our wedding convoy — absolutely premium experience. The team was professional, pricing was transparent, and the vehicle was in immaculate condition. Outstanding!',
-    date: 'January 2025',
+    date: `January ${year}`,
   },
   {
     id: 4,
@@ -44,7 +46,7 @@ const testimonials = [
     rating: 5,
     service: 'Uber Taxi',
     text: 'I use Trinox taxis almost every week for office commutes. Always on time, always comfortable. The drivers are very professional and courteous. Best taxi service in the region.',
-    date: 'March 2025',
+    date: `March ${year}`,
   },
   {
     id: 5,
@@ -54,7 +56,7 @@ const testimonials = [
     rating: 5,
     service: 'Car Rental',
     text: 'Rented a Swift Dzire for a week — best value for money I\'ve seen. The car was well-maintained, fuel-efficient, and the team was super responsive on WhatsApp. Zero hidden charges.',
-    date: 'December 2024',
+    date: `December ${year - 1}`,
   },
   {
     id: 6,
@@ -64,7 +66,7 @@ const testimonials = [
     rating: 5,
     service: 'Uber Taxi',
     text: 'Trinox arranged a cab for my elderly mother\'s hospital visit. The driver was so kind and patient. It felt less like a taxi and more like a trusted family service. Thank you Trinox!',
-    date: 'February 2025',
+    date: `February ${year}`,
   },
 ]
 

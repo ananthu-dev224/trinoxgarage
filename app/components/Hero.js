@@ -107,7 +107,7 @@ export default function Hero() {
 
       {/* Decorative side text */}
       <div className={styles.sideText}>
-        <span>TRINOX GARAGE © 2025</span>
+        <span>TRINOX GARAGE © {new Date().getFullYear()}</span>
       </div>
 
       {/* Scroll indicator */}
@@ -169,9 +169,9 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.85 }}
         >
-          Trinox Garage provides premium car rentals and drive-to-earn taxi
-          vehicles. From personal trips to income opportunities — we power every
-          journey.
+          Trinox Garage provides premium car rentals, tourism & travel packages,
+          and drive-to-earn taxi vehicles. From airport transfers to holiday
+          trips — we power every journey.
         </motion.p>
 
         {/* CTAs */}
