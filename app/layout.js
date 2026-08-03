@@ -13,8 +13,9 @@ const dmSans = DM_Sans({
 })
 
 export const metadata = {
-  title: 'Trinox Garage — Car Rental & Uber Taxi',
-  description: 'Premium vehicle rental and taxi services by Trinox Garage.',
+  title: 'Trinox Garage — Car Rental, Tourism & Taxi',
+  description:
+    'Self-drive car rental, tourism & travel packages, airport transfers, and drive-to-earn taxi cars by Trinox Garage.',
 }
 
 export default function RootLayout({ children }) {

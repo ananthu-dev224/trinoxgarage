@@ -85,12 +85,123 @@
 /* ── Visual Area ── */
 .visual {
   position: relative;
-  height: 160px;
+  aspect-ratio: 3 / 4;
+  height: auto;
   background: var(--dark-3);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+}
+
+/* ── Image Slider ── */
+.slider {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+}
+
+.carImage {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .carImage {
+  transform: scale(1.03);
+}
+
+.sliderNav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  width: 28px;
+  height: 28px;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(10, 10, 10, 0.65);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.25s ease, background 0.2s ease;
+}
+
+.card:hover .sliderNav {
+  opacity: 1;
+}
+
+.sliderNav:hover {
+  background: var(--yellow);
+  border-color: var(--yellow);
+  color: var(--black);
+}
+
+.sliderPrev {
+  left: 8px;
+}
+
+.sliderNext {
+  right: 8px;
+}
+
+.dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 4;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.dotActive {
+  background: var(--yellow);
+  transform: scale(1.2);
+}
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  z-index: 1;
+}
+
+.placeholderIcon {
+  font-size: 48px;
+  line-height: 1;
+  opacity: 0.7;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.5));
+}
+
+.placeholderText {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.25);
 }
 
 .badge {
@@ -104,7 +215,7 @@
   text-transform: uppercase;
   padding: 4px 10px;
   border-radius: 2px;
-  z-index: 2;
+  z-index: 5;
 }
 
 .badgeYellow {
@@ -113,9 +224,10 @@
 }
 
 .badgeWhite {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(10, 10, 10, 0.75);
   color: var(--white);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
 }
 
 .typePill {
@@ -127,23 +239,13 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 3px 8px;
+  color: var(--white);
+  background: rgba(10, 10, 10, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 4px 10px;
   border-radius: 2px;
-  z-index: 2;
-}
-
-.carEmoji {
-  font-size: 72px;
-  line-height: 1;
-  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.5));
-  transition: transform 0.4s ease;
-  user-select: none;
-}
-
-.card:hover .carEmoji {
-  transform: scale(1.08) translateY(-4px);
+  z-index: 5;
+  backdrop-filter: blur(6px);
 }
 
 .hoverOverlay {
@@ -234,6 +336,45 @@
   color: var(--gray);
 }
 
+/* ── Transmission Variants ── */
+.variantTabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.variantBtn {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.variantBtn:hover {
+  border-color: rgba(255, 214, 0, 0.4);
+  color: var(--white);
+}
+
+.variantActive {
+  background: var(--yellow);
+  border-color: var(--yellow);
+  color: var(--black);
+}
+
+.variantActive:hover {
+  background: var(--yellow-dark);
+  border-color: var(--yellow-dark);
+  color: var(--black);
+}
+
 /* ── Price Row ── */
 .priceRow {
   display: flex;
@@ -246,7 +387,16 @@
 .price {
   display: flex;
   align-items: baseline;
-  gap: 3px;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.priceOriginal {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.3);
+  text-decoration: line-through;
 }
 
 .priceVal {

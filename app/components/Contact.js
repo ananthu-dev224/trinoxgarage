@@ -46,6 +46,7 @@ const contactInfo = [
 const services = [
   'Car Rental',
   'Taxi Rental (Drive & Earn)',
+  'Tourism & Travel Packages',
   'Airport Transfer',
   'Outstation Trip',
   'Wedding Car Rental',

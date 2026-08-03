@@ -91,9 +91,10 @@ const quickLinks = [
 
 const services = [
   { label: "Self-Drive Car Rental", href: "#services" },
+  { label: "Tourism & Travel Packages", href: "#services" },
   { label: "Drive & Earn Taxi Rental", href: "#services" },
-  { label: "Airport Transfers", href: "#contact" },
-  { label: "Outstation Trips", href: "#contact" },
+  { label: "Airport Transfers", href: "#services" },
+  { label: "Outstation Trips", href: "#services" },
   { label: "Wedding Car Rental", href: "#contact" },
   { label: "Corporate Travel", href: "#contact" },
   { label: "Long-Term Rentals", href: "#contact" },
