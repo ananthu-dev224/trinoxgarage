@@ -10,13 +10,26 @@
   padding: 0 5%;
 }
 
-/* ── Canvas background ── */
-.canvas {
+/* ── Banner background ── */
+.bgWrap {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
   z-index: 0;
+  width: 100%;
+  height: 120%;
+}
+
+.bgImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.45);
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* ── Overlays ── */
@@ -24,9 +37,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 65%;
+  width: 70%;
   height: 100%;
-  background: linear-gradient(to right, rgba(10,10,10,1) 40%, transparent);
+  background: linear-gradient(to right, rgba(10, 10, 10, 0.92) 25%, rgba(10, 10, 10, 0.55) 55%, transparent);
   z-index: 1;
   pointer-events: none;
 }
@@ -36,62 +49,10 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 240px;
+  height: 280px;
   background: linear-gradient(to top, var(--black), transparent);
   z-index: 1;
   pointer-events: none;
-}
-
-/* ── Decorative side text ── */
-.sideText {
-  position: absolute;
-  right: -60px;
-  top: 50%;
-  transform: translateY(-50%) rotate(90deg);
-  z-index: 2;
-  white-space: nowrap;
-}
-
-.sideText span {
-  font-family: var(--font-body);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.15);
-}
-
-/* ── Scroll indicator ── */
-.scrollIndicator {
-  position: absolute;
-  bottom: 120px;
-  right: 5%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  z-index: 2;
-}
-
-.scrollLine {
-  width: 1px;
-  height: 60px;
-  background: linear-gradient(to bottom, var(--yellow), transparent);
-  animation: scrollPulse 2s ease-in-out infinite;
-}
-
-@keyframes scrollPulse {
-  0%, 100% { opacity: 0.3; transform: scaleY(1); }
-  50% { opacity: 1; transform: scaleY(1.1); }
-}
-
-.scrollIndicator span {
-  font-family: var(--font-body);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-  color: rgba(255,255,255,0.3);
-  writing-mode: vertical-rl;
 }
 
 /* ── Main Content ── */
