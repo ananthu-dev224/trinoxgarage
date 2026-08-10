@@ -108,6 +108,27 @@
   line-height: 1.2;
 }
 
+.infoNumbers {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.infoValueLink {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  width: fit-content;
+}
+
+.infoValueLink:hover {
+  color: var(--yellow);
+}
+
 .infoSub {
   font-family: var(--font-body);
   font-size: 11px;

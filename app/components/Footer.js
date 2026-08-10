@@ -80,24 +80,24 @@ const Twitter = ({ size = 16 }) => (
 import styles from "./Footer.module.css";
 
 const quickLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "Our Fleet", href: "#fleet" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Why Choose Us", href: "#why-us" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "Home", href: "/#home" },
+  { label: "Services", href: "/#services" },
+  { label: "Our Fleet", href: "/#fleet" },
+  { label: "How It Works", href: "/#how-it-works" },
+  { label: "Why Choose Us", href: "/#why-us" },
+  { label: "Testimonials", href: "/#testimonials" },
+  { label: "Contact Us", href: "/#contact" },
 ];
 
 const services = [
-  { label: "Self-Drive Car Rental", href: "#services" },
-  { label: "Tourism & Travel Packages", href: "#services" },
-  { label: "Drive & Earn Taxi Rental", href: "#services" },
-  { label: "Airport Transfers", href: "#services" },
-  { label: "Outstation Trips", href: "#services" },
-  { label: "Wedding Car Rental", href: "#contact" },
-  { label: "Corporate Travel", href: "#contact" },
-  { label: "Long-Term Rentals", href: "#contact" },
+  { label: "Self-Drive Car Rental", href: "/#services" },
+  { label: "Tourism & Travel Packages", href: "/#services" },
+  { label: "Drive & Earn Taxi Rental", href: "/#services" },
+  { label: "Airport Transfers", href: "/#services" },
+  { label: "Outstation Trips", href: "/#services" },
+  { label: "Wedding Car Rental", href: "/#contact" },
+  { label: "Corporate Travel", href: "/#contact" },
+  { label: "Long-Term Rentals", href: "/#contact" },
 ];
 
 const socials = [
@@ -123,8 +123,13 @@ export default function Footer() {
   };
 
   const handleNavClick = (href) => {
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    const hash = href.includes('#') ? `#${href.split('#')[1]}` : href
+    const el = document.querySelector(hash)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+      return
+    }
+    window.location.href = href
   };
 
   return (
@@ -214,6 +219,10 @@ export default function Footer() {
                   <Phone size={13} color="var(--yellow)" />
                   <span>+91 83300 53689</span>
                 </a>
+                <a href="tel:+919526952719" className={styles.contactLine}>
+                  <Phone size={13} color="var(--yellow)" />
+                  <span>+91 95269 52719</span>
+                </a>
                 <a
                   href="mailto:hello.trinoxgarage@gmail.com"
                   className={styles.contactLine}
@@ -244,8 +253,10 @@ export default function Footer() {
                       href={link.href}
                       className={styles.footerLink}
                       onClick={(e) => {
-                        e.preventDefault();
-                        handleNavClick(link.href);
+                        if (document.querySelector(`#${link.href.split('#')[1]}`)) {
+                          e.preventDefault()
+                          handleNavClick(link.href)
+                        }
                       }}
                     >
                       <span className={styles.linkArrow}>›</span>
@@ -272,8 +283,10 @@ export default function Footer() {
                       href={link.href}
                       className={styles.footerLink}
                       onClick={(e) => {
-                        e.preventDefault();
-                        handleNavClick(link.href);
+                        if (document.querySelector(`#${link.href.split('#')[1]}`)) {
+                          e.preventDefault()
+                          handleNavClick(link.href)
+                        }
                       }}
                     >
                       <span className={styles.linkArrow}>›</span>
@@ -344,15 +357,15 @@ export default function Footer() {
           </p>
 
           <div className={styles.bottomLinks}>
-            <a href="#" className={styles.bottomLink}>
+            <a href="/privacy-policy" className={styles.bottomLink}>
               Privacy Policy
             </a>
             <span className={styles.bottomDot} />
-            <a href="#" className={styles.bottomLink}>
+            <a href="/terms-of-service" className={styles.bottomLink}>
               Terms of Service
             </a>
             <span className={styles.bottomDot} />
-            <a href="#" className={styles.bottomLink}>
+            <a href="/refund-policy" className={styles.bottomLink}>
               Refund Policy
             </a>
           </div>

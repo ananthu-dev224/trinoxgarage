@@ -3,26 +3,30 @@
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import {
-  Phone, Mail, MapPin, Clock, Send,
-  MessageCircle, CheckCircle2, AlertCircle,
+  Phone, Mail, MapPin, Clock,
+  MessageCircle, CheckCircle2,
 } from 'lucide-react'
 import styles from './Contact.module.css'
 
 const contactInfo = [
   {
     icon: Phone,
-    label: 'Call / WhatsApp',
-    value: '+91 83300 53689',
+    label: 'Call Us',
+    numbers: [
+      { label: '+91 83300 53689', href: 'tel:+918330053689' },
+      { label: '+91 95269 52719', href: 'tel:+919526952719' },
+    ],
     sub: 'Available 24/7',
-    href: 'tel:+918330053689',
     action: 'Call Now',
   },
   {
     icon: MessageCircle,
     label: 'WhatsApp',
-    value: '+91 83300 53689',
+    numbers: [
+      { label: '+91 83300 53689', href: 'https://wa.me/918330053689' },
+      { label: '+91 95269 52719', href: 'https://wa.me/919526952719' },
+    ],
     sub: 'Chat with us instantly',
-    href: 'https://wa.me/918330053689',
     action: 'WhatsApp Us',
   },
   {
@@ -43,6 +47,8 @@ const contactInfo = [
   },
 ]
 
+const WHATSAPP_NUMBER = '918330053689'
+
 const services = [
   'Car Rental',
   'Taxi Rental (Drive & Earn)',
@@ -52,6 +58,24 @@ const services = [
   'Wedding Car Rental',
   'Corporate Travel'
 ];
+
+function buildWhatsAppMessage(form) {
+  const lines = [
+    'New Booking Request — Trinox Garage',
+    '',
+    `Name: ${form.name}`,
+    `Phone: ${form.phone}`,
+  ]
+
+  if (form.email) lines.push(`Email: ${form.email}`)
+  if (form.service) lines.push(`Service: ${form.service}`)
+  if (form.date) lines.push(`Preferred Date: ${form.date}`)
+  if (form.message) {
+    lines.push('', 'Details:', form.message)
+  }
+
+  return lines.join('\n')
+}
 
 export default function Contact() {
   const sectionRef = useRef(null)
@@ -72,12 +96,17 @@ export default function Contact() {
     setForm(prev => ({ ...prev, service: s }))
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     if (!form.name || !form.phone) return
+
     setStatus('sending')
-    // Simulate submission — replace with your API call
-    await new Promise(r => setTimeout(r, 1800))
+
+    const text = encodeURIComponent(buildWhatsAppMessage(form))
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`
+
+    window.open(url, '_blank', 'noopener,noreferrer')
+
     setStatus('success')
     setTimeout(() => {
       setStatus('idle')
@@ -121,29 +150,69 @@ export default function Contact() {
           >
             {/* Info cards */}
             <div className={styles.infoCards}>
-              {contactInfo.map((info, i) => (
-                <motion.a
-                  key={i}
-                  href={info.href}
-                  target={info.href.startsWith('http') ? '_blank' : undefined}
-                  rel="noreferrer"
-                  className={styles.infoCard}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.3 + i * 0.08 }}
-                  whileHover={{ y: -3 }}
-                >
-                  <div className={styles.infoIconWrap}>
-                    <info.icon size={18} />
-                  </div>
-                  <div className={styles.infoText}>
-                    <span className={styles.infoLabel}>{info.label}</span>
-                    <span className={styles.infoValue}>{info.value}</span>
-                    <span className={styles.infoSub}>{info.sub}</span>
-                  </div>
-                  <span className={styles.infoAction}>{info.action} →</span>
-                </motion.a>
-              ))}
+              {contactInfo.map((info, i) => {
+                const cardContent = (
+                  <>
+                    <div className={styles.infoIconWrap}>
+                      <info.icon size={18} />
+                    </div>
+                    <div className={styles.infoText}>
+                      <span className={styles.infoLabel}>{info.label}</span>
+                      {info.numbers ? (
+                        <div className={styles.infoNumbers}>
+                          {info.numbers.map((n) => (
+                            <a
+                              key={n.href}
+                              href={n.href}
+                              target={n.href.startsWith('http') ? '_blank' : undefined}
+                              rel="noreferrer"
+                              className={styles.infoValueLink}
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              {n.label}
+                            </a>
+                          ))}
+                        </div>
+                      ) : (
+                        <span className={styles.infoValue}>{info.value}</span>
+                      )}
+                      <span className={styles.infoSub}>{info.sub}</span>
+                    </div>
+                    <span className={styles.infoAction}>{info.action} →</span>
+                  </>
+                )
+
+                if (info.numbers) {
+                  return (
+                    <motion.div
+                      key={i}
+                      className={styles.infoCard}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={isInView ? { opacity: 1, y: 0 } : {}}
+                      transition={{ delay: 0.3 + i * 0.08 }}
+                      whileHover={{ y: -3 }}
+                    >
+                      {cardContent}
+                    </motion.div>
+                  )
+                }
+
+                return (
+                  <motion.a
+                    key={i}
+                    href={info.href}
+                    target={info.href.startsWith('http') ? '_blank' : undefined}
+                    rel="noreferrer"
+                    className={styles.infoCard}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ delay: 0.3 + i * 0.08 }}
+                    whileHover={{ y: -3 }}
+                  >
+                    {cardContent}
+                  </motion.a>
+                )
+              })}
             </div>
 
             {/* Hours */}
@@ -220,9 +289,9 @@ export default function Contact() {
                   animate={{ opacity: 1, scale: 1 }}
                 >
                   <CheckCircle2 size={48} color="var(--yellow)" />
-                  <h4 className={styles.successTitle}>BOOKING RECEIVED!</h4>
+                  <h4 className={styles.successTitle}>OPENING WHATSAPP!</h4>
                   <p className={styles.successText}>
-                    Thank you! Our team will contact you within minutes to confirm your booking.
+                    Your booking details are ready — just send the message on WhatsApp to confirm.
                   </p>
                 </motion.div>
               ) : (
@@ -320,18 +389,18 @@ export default function Contact() {
                     {status === 'sending' ? (
                       <>
                         <div className={styles.spinner} />
-                        Sending Booking...
+                        Opening WhatsApp...
                       </>
                     ) : (
                       <>
-                        <Send size={16} />
-                        Send Booking Request
+                        <MessageCircle size={16} />
+                        Send via WhatsApp
                       </>
                     )}
                   </button>
 
                   <p className={styles.formNote}>
-                    * We'll confirm your booking via call or WhatsApp within minutes.
+                    * Submitting opens WhatsApp with your booking details ready to send.
                     No payment required to submit.
                   </p>
                 </form>

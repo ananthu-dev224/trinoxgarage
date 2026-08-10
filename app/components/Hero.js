@@ -1,6 +1,7 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
+import Image from 'next/image'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowRight, Shield, Clock, Star } from 'lucide-react'
 import styles from './Hero.module.css'
@@ -12,7 +13,6 @@ const badges = [
 ]
 
 export default function Hero() {
-  const canvasRef = useRef(null)
   const sectionRef = useRef(null)
 
   const { scrollYProgress } = useScroll({
@@ -22,72 +22,7 @@ export default function Hero() {
 
   const yText = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0])
-
-  // Animated grid canvas
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-    const ctx = canvas.getContext('2d')
-    let animId
-    let time = 0
-
-    const resize = () => {
-      canvas.width = canvas.offsetWidth
-      canvas.height = canvas.offsetHeight
-    }
-    resize()
-    window.addEventListener('resize', resize)
-
-    const draw = () => {
-      const w = canvas.width
-      const h = canvas.height
-      ctx.clearRect(0, 0, w, h)
-
-      const cols = 20
-      const rows = 14
-      const cellW = w / cols
-      const cellH = h / rows
-
-      for (let c = 0; c <= cols; c++) {
-        for (let r = 0; r <= rows; r++) {
-          const x = c * cellW
-          const y = r * cellH
-          const dist = Math.sqrt(Math.pow(c - cols / 2, 2) + Math.pow(r - rows / 2, 2))
-          const wave = Math.sin(dist * 0.5 - time * 0.8) * 0.5 + 0.5
-          const alpha = wave * 0.12
-
-          ctx.beginPath()
-          ctx.arc(x, y, 1.5, 0, Math.PI * 2)
-          ctx.fillStyle = `rgba(255, 214, 0, ${alpha})`
-          ctx.fill()
-        }
-      }
-
-      // Diagonal accent line
-      ctx.beginPath()
-      ctx.moveTo(w * 0.55, 0)
-      ctx.lineTo(w * 0.75, h)
-      ctx.strokeStyle = 'rgba(255, 214, 0, 0.04)'
-      ctx.lineWidth = 80
-      ctx.stroke()
-
-      ctx.beginPath()
-      ctx.moveTo(w * 0.65, 0)
-      ctx.lineTo(w * 0.85, h)
-      ctx.strokeStyle = 'rgba(255, 214, 0, 0.025)'
-      ctx.lineWidth = 40
-      ctx.stroke()
-
-      time += 0.015
-      animId = requestAnimationFrame(draw)
-    }
-    draw()
-
-    return () => {
-      cancelAnimationFrame(animId)
-      window.removeEventListener('resize', resize)
-    }
-  }, [])
+  const yBg = useTransform(scrollYProgress, [0, 1], ['0%', '20%'])
 
   const handleBookClick = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
@@ -98,27 +33,25 @@ export default function Hero() {
 
   return (
     <section id="home" ref={sectionRef} className={styles.hero}>
-      {/* Animated canvas background */}
-      <canvas ref={canvasRef} className={styles.canvas} />
+      {/* Banner background */}
+      <motion.div className={styles.bgWrap} style={{ y: yBg }}>
+        <Image
+          src="/images/banner.jpg"
+          alt="Trinox Garage fleet"
+          fill
+          priority
+          sizes="100vw"
+          className={styles.bgImage}
+        />
+      </motion.div>
 
-      {/* Dark gradient overlays */}
+      {/* Dark overlays for text readability */}
+      <div className={styles.overlay} />
       <div className={styles.gradientLeft} />
       <div className={styles.gradientBottom} />
 
-      {/* Decorative side text */}
-      <div className={styles.sideText}>
-        <span>TRINOX GARAGE © {new Date().getFullYear()}</span>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className={styles.scrollIndicator}>
-        <div className={styles.scrollLine} />
-        <span>SCROLL</span>
-      </div>
-
       {/* Main content */}
       <motion.div className={styles.content} style={{ y: yText, opacity }}>
-        {/* Tag line */}
         <motion.div
           className={styles.tagRow}
           initial={{ opacity: 0, x: -30 }}
@@ -127,11 +60,10 @@ export default function Hero() {
         >
           <span className={styles.tagDot} />
           <span className={styles.tagText}>
-            Kerala's Premium Vehicle Service
+            Kerala&apos;s Premium Vehicle Service
           </span>
         </motion.div>
 
-        {/* Headline */}
         <div className={styles.headlineWrap}>
           <motion.h1
             className={styles.headline}
@@ -162,7 +94,6 @@ export default function Hero() {
           </motion.h1>
         </div>
 
-        {/* Description */}
         <motion.p
           className={styles.description}
           initial={{ opacity: 0, y: 30 }}
@@ -174,7 +105,6 @@ export default function Hero() {
           trips — we power every journey.
         </motion.p>
 
-        {/* CTAs */}
         <motion.div
           className={styles.ctaRow}
           initial={{ opacity: 0, y: 30 }}
@@ -190,7 +120,6 @@ export default function Hero() {
           </button>
         </motion.div>
 
-        {/* Trust Badges */}
         <motion.div
           className={styles.badges}
           initial={{ opacity: 0 }}
@@ -211,26 +140,6 @@ export default function Hero() {
           ))}
         </motion.div>
       </motion.div>
-
-      {/* Stats strip */}
-      {/* <motion.div
-        className={styles.statsStrip}
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1.4 }}
-      >
-        {[
-          { value: '500+', label: 'Happy Clients' },
-          { value: '50+', label: 'Vehicles' },
-          { value: '5★', label: 'Avg Rating' },
-          { value: '24/7', label: 'Support' },
-        ].map((stat, i) => (
-          <div key={i} className={styles.stat}>
-            <span className={styles.statValue}>{stat.value}</span>
-            <span className={styles.statLabel}>{stat.label}</span>
-          </div>
-        ))}
-      </motion.div> */}
     </section>
-  );
+  )
 }
