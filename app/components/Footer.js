@@ -108,10 +108,10 @@ const socials = [
 ];
 
 const fleetHighlights = [
-  { icon: Car, label: "Sedan Cars", sub: "From ₹999/day" },
-  { icon: Car, label: "SUV & MUV", sub: "From ₹1,800/day" },
-  { icon: Car, label: "Premium Cars", sub: "From ₹3,500/day" },
-  { icon: Navigation, label: "Uber Taxi", sub: "From ₹12/km" },
+  { icon: Car, label: "Sedan Cars", sub: "From â‚¹999/day" },
+  { icon: Car, label: "SUV & MUV", sub: "From â‚¹1,800/day" },
+  { icon: Car, label: "Premium Cars", sub: "From â‚¹3,500/day" },
+  { icon: Navigation, label: "Uber Taxi", sub: "From â‚¹12/km" },
 ];
 
 export default function Footer() {
@@ -191,8 +191,8 @@ export default function Footer() {
               </div>
 
               <p className={styles.brandDesc}>
-                Trinox Garage is Kerala's trusted vehicle rental and taxi
-                service, based in Thalakottukara, Thrissur. Premium cars, verified
+                Trinox Garage is Thrissur's trusted car rental and taxi
+                service in Kerala, based in Thalakottukara. Self-drive rental cars, verified
                 drivers, and round-the-clock availability — all in one place.
               </p>
 
@@ -259,7 +259,7 @@ export default function Footer() {
                         }
                       }}
                     >
-                      <span className={styles.linkArrow}>›</span>
+                      <span className={styles.linkArrow}>â€º</span>
                       {link.label}
                     </a>
                   </li>
@@ -289,7 +289,7 @@ export default function Footer() {
                         }
                       }}
                     >
-                      <span className={styles.linkArrow}>›</span>
+                      <span className={styles.linkArrow}>â€º</span>
                       {link.label}
                     </a>
                   </li>
@@ -328,9 +328,9 @@ export default function Footer() {
                   Hours
                 </h4>
                 {[
-                  { d: "Mon – Fri", t: "7AM – 10PM" },
-                  { d: "Saturday", t: "7AM – 11PM" },
-                  { d: "Sunday", t: "8AM – 9PM" },
+                  { d: "Mon — Fri", t: "7AM — 10PM" },
+                  { d: "Saturday", t: "7AM — 11PM" },
+                  { d: "Sunday", t: "8AM — 9PM" },
                   { d: "Taxi", t: "24 / 7" },
                 ].map((h) => (
                   <div key={h.d} className={styles.hoursRow}>
@@ -353,7 +353,7 @@ export default function Footer() {
         <div className={styles.bottomInner}>
           <p className={styles.copyright}>
             © {new Date().getFullYear()} Trinox Garage. All rights reserved.
-            Built with ❤️ in Kerala, India.
+            Built with â¤ï¸ in Kerala, India.
           </p>
 
           <div className={styles.bottomLinks}>

@@ -1,9 +1,12 @@
 import LegalPage, { Section } from '../components/LegalPage'
 
 export const metadata = {
-  title: 'Privacy Policy — Trinox Garage',
+  title: 'Privacy Policy',
   description:
-    'Learn how Trinox Garage collects, uses, and protects your personal information.',
+    'Privacy policy for Trinox Garage car rental and travel services in Thrissur, Kerala. Learn how we collect, use, and protect your information.',
+  alternates: {
+    canonical: '/privacy-policy',
+  },
 }
 
 export default function PrivacyPolicyPage() {

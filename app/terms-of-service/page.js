@@ -1,9 +1,12 @@
 import LegalPage, { Section } from '../components/LegalPage'
 
 export const metadata = {
-  title: 'Terms of Service — Trinox Garage',
+  title: 'Terms of Service',
   description:
-    'Terms and conditions for car rental, tourism, travel packages, and taxi services from Trinox Garage.',
+    'Terms and conditions for car rental, tourism packages, and taxi services from Trinox Garage in Thrissur, Kerala.',
+  alternates: {
+    canonical: '/terms-of-service',
+  },
 }
 
 export default function TermsOfServicePage() {
