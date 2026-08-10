@@ -1,26 +1,21 @@
-'use client'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Services from './components/Services'
-import Fleet from './components/Fleet'
-import HowItWorks from './components/HowItWorks'
-import WhyUs from './components/WhyUs'
-import Testimonials from './components/Testimonials'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import HomePage from './components/HomePage'
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from './lib/site'
+
+export const metadata = {
+  title: {
+    absolute: `${SITE_NAME} — Car Rental in Thrissur, Kerala | Self-Drive & Taxi`,
+  },
+  description: SITE_DESCRIPTION,
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    url: SITE_URL,
+    title: `${SITE_NAME} — Car Rental in Thrissur, Kerala`,
+    description: SITE_DESCRIPTION,
+  },
+}
 
 export default function Home() {
-  return (
-    <main>
-      <Navbar />
-      <Hero />
-      <Services />
-      <Fleet />
-      <HowItWorks />
-      <WhyUs />
-      <Testimonials />
-      <Contact />
-      <Footer />
-    </main>
-  )
+  return <HomePage />
 }

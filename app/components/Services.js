@@ -12,7 +12,7 @@ const services = [
     tag: '01 — Car Rental',
     title: 'Self-Drive\nCar Rental',
     description:
-      'Choose from our premium fleet and enjoy complete freedom on the road. Perfect for personal use, trips, or long-term needs with flexible rental options.',
+      'Self-drive car rental in Thrissur with a premium fleet and complete freedom on the road. Ideal for city trips, Kerala travel, or long-term needs with flexible plans.',
     features: [
       'Sedans, SUVs & hatchbacks',
       'Flexible daily, weekly & monthly plans',
@@ -23,7 +23,7 @@ const services = [
     accent: true,
     stats: [
       { value: '15+', label: 'Vehicles' },
-      { value: '₹1,100', label: 'Starting / Day' },
+      { value: 'â‚¹1,100', label: 'Starting / Day' },
     ],
     decorIcon: Car,
   },
@@ -33,7 +33,7 @@ const services = [
     tag: '02 — Tourism',
     title: 'Travel &\nTourism',
     description:
-      'From airport pickups to curated holiday packages — travel Kerala and beyond with comfortable vehicles and reliable service, tailored to your itinerary.',
+      'From Cochin airport transfers to curated holiday packages — travel Thrissur, Kerala and beyond with comfortable vehicles and reliable service.',
     features: [
       'Airport transfers & hotel pickups',
       'Custom tourism & sightseeing trips',

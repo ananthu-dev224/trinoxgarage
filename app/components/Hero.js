@@ -37,7 +37,7 @@ export default function Hero() {
       <motion.div className={styles.bgWrap} style={{ y: yBg }}>
         <Image
           src="/images/banner.jpg"
-          alt="Trinox Garage fleet"
+          alt="Self-drive car rental fleet by Trinox Garage in Thrissur, Kerala"
           fill
           priority
           sizes="100vw"
@@ -60,7 +60,7 @@ export default function Hero() {
         >
           <span className={styles.tagDot} />
           <span className={styles.tagText}>
-            Kerala&apos;s Premium Vehicle Service
+            Car Rental in Thrissur, Kerala
           </span>
         </motion.div>
 
@@ -100,9 +100,9 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.85 }}
         >
-          Trinox Garage provides premium car rentals, tourism & travel packages,
-          and drive-to-earn taxi vehicles. From airport transfers to holiday
-          trips — we power every journey.
+          Self-drive rental cars in Thrissur, Kerala — plus tourism packages,
+          airport transfers, and drive-to-earn taxi vehicles. Based in
+          Thalakottukara, we power every journey across Kerala.
         </motion.p>
 
         <motion.div

@@ -1,0 +1,17 @@
+{
+  "name": "Trinox Garage",
+  "short_name": "Trinox",
+  "description": "Self-drive car rental, tourism packages, airport transfers, and taxi cars in Thrissur, Kerala.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "lang": "en-IN",
+  "icons": [
+    {
+      "src": "/images/trinox_logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

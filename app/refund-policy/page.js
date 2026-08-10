@@ -1,9 +1,12 @@
 import LegalPage, { Section } from '../components/LegalPage'
 
 export const metadata = {
-  title: 'Refund Policy — Trinox Garage',
+  title: 'Refund Policy',
   description:
-    'Cancellation and refund policy for Trinox Garage car rentals, tourism packages, and taxi services.',
+    'Cancellation and refund policy for Trinox Garage car rentals, tourism packages, and taxi services in Thrissur, Kerala.',
+  alternates: {
+    canonical: '/refund-policy',
+  },
 }
 
 export default function RefundPolicyPage() {
@@ -40,7 +43,7 @@ export default function RefundPolicyPage() {
         <p>Unless a special written agreement says otherwise:</p>
         <ul>
           <li><strong>Cancel 48+ hours before pickup:</strong> Full refund of advance paid, minus any non-refundable third-party charges if applicable</li>
-          <li><strong>Cancel 24–48 hours before pickup:</strong> 50% of the advance may be retained as a cancellation fee</li>
+          <li><strong>Cancel 24—48 hours before pickup:</strong> 50% of the advance may be retained as a cancellation fee</li>
           <li><strong>Cancel within 24 hours of pickup / no-show:</strong> Advance payment is generally non-refundable</li>
           <li><strong>Early return:</strong> Unused rental days are not automatically refundable once the rental has started</li>
         </ul>
@@ -66,7 +69,7 @@ export default function RefundPolicyPage() {
         </p>
         <ul>
           <li><strong>Cancel 7+ days before start:</strong> Refund of advance minus any non-recoverable third-party costs already incurred</li>
-          <li><strong>Cancel 3–7 days before start:</strong> Up to 50% of trip value / advance may be retained</li>
+          <li><strong>Cancel 3—7 days before start:</strong> Up to 50% of trip value / advance may be retained</li>
           <li><strong>Cancel within 3 days / after trip start:</strong> Generally non-refundable</li>
         </ul>
         <p>
@@ -110,7 +113,7 @@ export default function RefundPolicyPage() {
       <Section title="9. How Refunds Are Processed">
         <ul>
           <li>Approved refunds are processed to the original payment method where possible</li>
-          <li>Bank / UPI refunds typically take 5–10 business days after approval</li>
+          <li>Bank / UPI refunds typically take 5—10 business days after approval</li>
           <li>Cash payments, if any, will be refunded as mutually arranged</li>
         </ul>
       </Section>
