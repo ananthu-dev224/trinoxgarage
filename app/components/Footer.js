@@ -108,10 +108,10 @@ const socials = [
 ];
 
 const fleetHighlights = [
-  { icon: Car, label: "Sedan Cars", sub: "From â‚¹999/day" },
-  { icon: Car, label: "SUV & MUV", sub: "From â‚¹1,800/day" },
-  { icon: Car, label: "Premium Cars", sub: "From â‚¹3,500/day" },
-  { icon: Navigation, label: "Uber Taxi", sub: "From â‚¹12/km" },
+  { icon: Car, label: "Sedan Cars", sub: "From INR 999/day" },
+  { icon: Car, label: "SUV & MUV", sub: "From INR 1,800/day" },
+  { icon: Car, label: "Premium Cars", sub: "From INR 3,500/day" },
+  { icon: Navigation, label: "Uber Taxi", sub: "From INR 12/km" },
 ];
 
 export default function Footer() {
@@ -259,7 +259,7 @@ export default function Footer() {
                         }
                       }}
                     >
-                      <span className={styles.linkArrow}>â€º</span>
+                      <span className={styles.linkArrow}></span>
                       {link.label}
                     </a>
                   </li>
@@ -289,7 +289,7 @@ export default function Footer() {
                         }
                       }}
                     >
-                      <span className={styles.linkArrow}>â€º</span>
+                      <span className={styles.linkArrow}></span>
                       {link.label}
                     </a>
                   </li>
